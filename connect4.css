@@ -1,3 +1,31 @@
+body {
+  max-width: 90%;
+  margin: auto;
+  text-align: center;
+  background-color: #f0f0f0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+.player {
+  display: inline-block;
+  padding: 1%;
+}
+
+#p1, #p2 {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+#board {
+  margin: auto;
+}
+
 /* game board table */
 
 #board td {
