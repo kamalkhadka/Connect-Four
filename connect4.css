@@ -62,3 +62,13 @@ h1 {
 #column-top td:hover {
   background-color: gold;
 }
+
+.turn {
+  color: blue;
+}
+
+.redTurn{
+  color: red;
+}
+
+

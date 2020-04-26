@@ -50,6 +50,10 @@ function makeHtmlBoard() {
     }
     htmlBoard.append(row);
   }
+  let turn = document.querySelector(".turn")
+  turn.innerText =
+    currPlayer === 1 ? "Player 1 Turn" : "Player 2 Turn";
+    turn.classList.add('redTurn');
 }
 
 /** findSpotForCol: given column x, return top empty y (null if filled) */
@@ -107,16 +111,20 @@ function handleClick(evt) {
 
   // check for tie
   // TODO: check if all cells in board are filled; if so call, call endGame
-  let boardFilled =  board.every((arr) => {
+  let boardFilled = board.every((arr) => {
     arr.every((val) => val);
   });
 
-  if(boardFilled){
+  if (boardFilled) {
     endGame("Tie!");
   }
   // switch players
   // TODO: switch currPlayer 1 <-> 2
   currPlayer === 1 ? (currPlayer = 2) : (currPlayer = 1);
+  let turn = document.querySelector(".turn")
+  turn.innerText =
+    currPlayer === 1 ? "Player 1 Turn" : "Player 2 Turn";
+  turn.classList.toggle('redTurn');
 }
 
 /** checkForWin: check board cell-by-cell for "does a win start here?" */
