@@ -50,10 +50,7 @@ function makeHtmlBoard() {
     }
     htmlBoard.append(row);
   }
-  let turn = document.querySelector(".turn")
-  turn.innerText =
-    currPlayer === 1 ? "Player 1 Turn" : "Player 2 Turn";
-    turn.classList.add('redTurn');
+  switchTurn();
 }
 
 /** findSpotForCol: given column x, return top empty y (null if filled) */
@@ -121,10 +118,14 @@ function handleClick(evt) {
   // switch players
   // TODO: switch currPlayer 1 <-> 2
   currPlayer === 1 ? (currPlayer = 2) : (currPlayer = 1);
+  switchTurn();
+}
+
+function switchTurn(){
   let turn = document.querySelector(".turn")
   turn.innerText =
     currPlayer === 1 ? "Player 1 Turn" : "Player 2 Turn";
-  turn.classList.toggle('redTurn');
+    turn.classList.toggle('redTurn');
 }
 
 /** checkForWin: check board cell-by-cell for "does a win start here?" */
