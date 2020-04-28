@@ -71,4 +71,8 @@ h1 {
   color: red;
 }
 
+tr:not(#column-top) {
+  background-color: darkgrey;
+}
+
 
